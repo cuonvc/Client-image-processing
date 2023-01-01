@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.main {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.select-file {
+    padding: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #70fff370;
+}
+
+.select-file:hover {
+    background-color: #2dffee70;
+}
+
+.main-quote {
+    padding-top: 100px;
+}
+
+.main-quote > h1 {
+    padding: 10px 0;
+}
+
+.hide_upload-img {
+    
+}
+
+.upload-file {
+    padding: 20px;
+}
