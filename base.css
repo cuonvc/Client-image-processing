@@ -39,3 +39,19 @@ html {
 .upload-file {
     padding: 20px;
 }
+
+.content-image-list {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content-image-item {
+    padding: 20px;
+}
+
+.image-item {
+    width: 400px;
+    border-radius: 8px;
+}

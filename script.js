@@ -44,10 +44,35 @@ function searchingImage() {
             redirect: "follow"
         };
 
+        document.querySelector(".main-quote").innerHTML = `<h1>Loading...</h1>`;
+
         fetch(uploadUrl, requestOptions)
         .then(response => response.json())
         .then(result => {
             console.log(result)
+            var content = "";
+            var countMatching = 0;
+            for (var i = 0; i < result.length; i++) {
+                if (result[i] != "Vui lòng chọn ảnh màu và đúng định dạng '.png'") {
+                    const imageBase64 = result[i][1];
+                    const src = 'data:image/png;base64,' + imageBase64;
+                    const imageContent = `
+                        <div class="content-image-item">
+                            <img class="image-item" src="${src}" alt="">
+                        </div>
+                    `
+                    content += imageContent;
+                    countMatching++;
+                }
+            }
+            
+            var title = document.querySelector(".main-quote")
+            document.querySelector(".content-image-list").innerHTML = content;
+            if (content == "") {
+                title.innerHTML = `<h1>Oops... Không tìm thấy kết quả :((</h1>`;
+            } else {
+                title.innerHTML = `<h1>Tìm thấy ${countMatching} kết quả</h1>`;
+            }
         })
         .catch(error => alert("Không thể upload ảnh: " + error));
 
