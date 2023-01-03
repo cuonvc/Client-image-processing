@@ -69,9 +69,9 @@ function searchingImage() {
             var title = document.querySelector(".main-quote")
             document.querySelector(".content-image-list").innerHTML = content;
             if (content == "") {
-                title.innerHTML = `<h1>Oops... Không tìm thấy kết quả :((</h1>`;
+                title.innerHTML = `<h1>Oops... Không có kết quả :((</h1>`;
             } else {
-                title.innerHTML = `<h1>Tìm thấy ${countMatching} kết quả</h1>`;
+                title.innerHTML = `<h1>Tìm thấy ${countMatching} kết quả tương tự</h1>`;
             }
         })
         .catch(error => alert("Không thể upload ảnh: " + error));
